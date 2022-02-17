@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>javaScript - time examples</h1>
+    <hr style="margin-bottom: 0;">
+
+    <!-- clock; clock canvas; timer canvas -->
+
+    <div id="clockBlockLeft">
+
+    <h2 class="">Clock</h2>
+
+    <p id="clockDisplay" class="clockLeft">00:00:00</p>
+
+    </div>
+
+    <canvas id="canvas" height="300px" width="300px"></canvas>
+
+    <hr style="margin-top: 0;">
+    
+    <!-- Year 2030 count down -->
+    <h2>Seconds until Year 2030:</h2>
+    <p id="clockDisplay">00:00:00</p>
+    
+    <hr>
+
+    <!-- Timer preset -->
+    <h2>Timer - preset</h2>
+    <p>Set a timer:</p>
+
+    <div id="timer-preset--buttons">
+        <button onclick="timer(10)">10s</button>
+        <button onclick="timer(60)">1min</button>
+        <button onclick="timer(1800)">30min</button>
+        <button onclick="timer(3600)">1h</button>
+        <button onclick="timer(7200)">2h</button>
+    <button onclick="clearInterv()">Pause</button>
+    </div>
+
+    <p id="timerDisplay">00:00:00</p>
+
+    <p id="testText"></p>
+
+    <hr>
+
+    <!-- Timer type in -->
+
+    <h2>Timer - type in</h2>
+    <p>Type in count down (in seconds):</p>
+
+    <div id="timer-input-area">
+        
+        <input type="datetime" id="inputTime" value="" size="3">
+
+        <br><br>
+
+        <button onclick="timerInput()" class="button_countInput">Start</button>
+        <button onclick="clearIntervInp()" class="button_countInput">Pause</button>
+    </div>
+
+    <p id="timerInputDisplay">00:00:00</p>
+
+    <hr>
+
+    <!-- Alarm -->
+
+    <h2>Timer - Enter date</h2>
+
+    <!-- Input datetime-local. Für Sekunden-Auswahl: step="1"-->
+
+    <div id="timerInputPick">
+    <label for="enterTime">Enter alarm clock time:</label><br><br>
+    <input id="enterTime" type="datetime-local" name="enterTime">
+    <button onclick="timerEnter()">Start</button>
+    <button onclick="clearIntervEnt()">Pause</button>
+    </div>
+
+    <p id="timerEnterDisplay">00d:00h:00m:00s</p>
+
+    <script src="js/clock.js"></script>
+    <script src="js/clockradio.js"></script>
+    
+</body>
+</html>

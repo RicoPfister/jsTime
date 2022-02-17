@@ -1,0 +1,21 @@
+#timer-input-area {
+    display: flex;
+}
+
+.button_countInput {
+    margin-left: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#canvas {
+
+}
+
+#clockBlockLeft {
+    float: left;
+    width: 100px;
+
+}
