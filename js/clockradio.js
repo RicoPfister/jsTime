@@ -1,12 +1,16 @@
 // explame from: https://www.webnots.com/analog-clock-with-html5-canvas-and-javascript/
 
-x=150;
-y=150;
+
+
+// initialize canvas; basic value
 
 clock=document.getElementById("canvas");
 ctx=clock.getContext("2d");
 
-//
+x=150;
+y=150;
+
+// loop order
 
 function loop()
 {
@@ -15,20 +19,24 @@ h=time.getHours();
 m=time.getMinutes();
 s=time.getSeconds();
 
-// Ziffernblatt
+// add clock face
 
 ctx.beginPath();
 ctx.fillStyle="white";
 ctx.arc(x,y,140,0,Math.PI*2,true);
 ctx.fill();
 ctx.strokeStyle="black";
-ctx.lineWidth=10;
+ctx.lineWidth=5;
 ctx.stroke();
 drawNumber();
+
+//add hands
 
 drawPointer(360*(h/12)+(m/60)*30-90,70,"black",10);
 drawPointer(360*(m/60)+(s/60)*6-90,100,"black",10);
 drawPointer(360*(s/60)+x-90,120,"black",2);
+
+drawDigitalClock()
 }
 
 // add numbers
@@ -49,7 +57,7 @@ ctx.fillText(str, tx, ty);
 }
 }
 
-// draw hands
+// create hands
 
 function drawPointer(deg,len,color,w)
 {
@@ -65,14 +73,17 @@ ctx.lineTo(x1,y1);
 ctx.stroke();
 }
 
-// start loop
+// digital clock text
+
+function drawDigitalClock() {
+    ctx.beginPath();
+    ctx.fillText(h+":"+m+":"+s, 100, 210);
+    
+    ctx.beginPath();
+    ctx.rect(96, 185, 100, 30)
+    ctx.stroke();
+  }
+
+// loop start
 
 setInterval(loop,500);
-
-
-
-
-
-
-
-
